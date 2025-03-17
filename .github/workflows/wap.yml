@@ -31,11 +31,18 @@ jobs:
 
       - name: Attest Predicate
         id: attest
-        uses: actions/attest@v1
+        uses: actions/attest@v2
         with:
           subject-path: ${{ env.SUBJECT_PATH }}
           predicate-type: "text/plain"
-          predicate-path: ${{ env.PREDICATE_PATH }}
+          predicate-path: ${{ env.PREDICATE_PATH }}'
+
+      - name: Attest
+        uses: actions/attest@v2
+        with:
+          subject-path: ${{ env.SUBJECT_PATH }}
+          predicate-type: "text/plain"
+          predicate: ${{ env.PREDICATE_PATH }}'
 
       - uses: actions/upload-artifact@v4
         with:
