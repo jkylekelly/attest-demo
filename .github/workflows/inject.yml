@@ -1,0 +1,34 @@
+name: inject test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: attest with custom predicate type
+    runs-on: ubuntu-latest
+    permissions:
+      attestations: write
+      id-token: write
+
+    steps:
+      - uses: hmarr/debug-action@v2
+      - name: snap
+        run: |
+          sudo snap search snappy
+      - name: Build artifacts
+        run: |
+          mkdir -p subdir
+          echo "single-subject" > subdir/artifact-1.bin
+ 
+      - name: Attest artifact
+        id: attest
+        uses: actions/attest@main
+        with:
+          subject-path: 'subdir/artifact-1.bin'
+          predicate-type: '"<img src=\"https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt=\"Example Image\" />"'
+          predicate: '{}'
+      - name: Check output
+        run: |
+          echo "${{ steps.attest.outputs.attestation-id }}"
+          echo "${{ steps.attest.outputs.attestation-url }}"
