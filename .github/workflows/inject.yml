@@ -26,7 +26,7 @@ jobs:
         uses: actions/attest@main
         with:
           subject-path: 'subdir/artifact-1.bin'
-          predicate-type: 'abuisowrljyqijwbpdbtqvuwasnavgqdscmeppjwizkdxtaefqssdyrnsnliyxsiaiylwwpuixnjysrqvpxybrmqaoufvcdslzezpxyjkapzubugghvyvzamibpphxlkddtvdulbpkwlzagdyqysunjntclinfzjribwnbjysuqvyhfmtbonqptsomkcgulgjupmjldmxoulcpqkocmrfdditycgsmawdkvdvgzjvywagmmtroojuldtkjdvntubiozpptqfozfevyhbusyvxifsaleqpphuxofyslkmgyvlsthhzobnjxhahzoodqpivxoeiwbjzvaaznzxfrxsxxezwpnftuwmmugvfvrdlyheimxmbskeixpdgeufistroonlunjjbdomthyazecyqmzqwxcpfrpucsorbvxoatlwppbxsssnvkllulkcatkoygyfnekhmdztjehwsdxlapriphyqgqtugiuueqsbqoquwiyyzihzshigercykeycklhtjlrqtwpgagveujwhrlxtmaociuxfmhlhphefyouuzmpbcqgpamgdmiitczjippptfrhirnvjsqwujttdqqqafcrwkiyxcxuqnexayhjruthihghtgjnlsadeivarguqaepfphzzjibhralkismooycdpakniirkmcrfyoyjuuffegyrgaftbrkwapruxaeltkczseryhkxzcgvmgviowggasquocyatbcgowiqyzgxombstkevvjliulacvixanuaqenzdrnpazbzocaitnfxhvgilbjunxzrhjrcksgiuivkwrcaamgmhmpelhujeeexedlsyxxedsaleujthmkgvotsawhfkgmqnikeaprikuiwsfdprqnuuznljlwrlbblkxpmwdyxuhzvujstaionqcseveurewtddndbdqfmtwsmvmtrnsetgwmziphtcpwjdvmvzprqbucsvkupzxrvdzzoosgmzdgouyfabuiso'
+          predicate-type: '";whoami;'
           predicate: '{}'
       - name: Check output
         run: |
