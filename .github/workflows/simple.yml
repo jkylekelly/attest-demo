@@ -1,0 +1,21 @@
+name: create attestation
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      attestations: write
+      id-token: write
+
+    steps:
+      - name: Create artifact
+        run: |
+          echo "example-content" > artifact.bin
+
+      - name: Attest artifact provenance
+        id: attest
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: 'artifact.bin'
